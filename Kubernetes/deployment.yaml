@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hw-deploy
+spec:
+  replicas: 1  # Ajusta el número de replicas según tus necesidades
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: hw
+  template:
+    metadata:
+      labels:
+        app: hw
+    spec:
+      containers:
+      - name: hw-container
+        image: jaimehenao8126/kantox:17c312e08b9ed8a0a0087f136a8ed5b44380efbf
+        ports:
+        - containerPort: 80
