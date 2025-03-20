@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: hw-service
+  name: hw-service-app-2
 spec:
   selector:
-    app: hw
+    app: hw-app-2
   ports:
   - protocol: TCP
     port: 80
