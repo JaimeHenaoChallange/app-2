@@ -2,10 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hw-deploy-app-2
-  annotations:
-    notifications.argoproj.io/subscribe.on-sync-succeeded.slack: argocdnotification1
-    notifications.argoproj.io/subscribe.on-sync-failed.slack: argocdnotification1
-    notifications.argoproj.io/subscribe.on-health-degraded.slack: argocdnotification1
+annotations:
+  notifications.argoproj.io/subscribe.on-sync-succeeded.slack: argocdnotification1
+  notifications.argoproj.io/subscribe.on-sync-failed.slack: argocdnotification1
+  notifications.argoproj.io/subscribe.on-health-degraded.slack: argocdnotification1
 spec:
   replicas: 1
   strategy:
