@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hw-deploy
+  name: hw-deploy-app-2
 spec:
   replicas: 1  # Ajusta el número de replicas según tus necesidades
   strategy:
@@ -11,14 +11,14 @@ spec:
       maxUnavailable: 1
   selector:
     matchLabels:
-      app: hw
+      app: hw-app-2
   template:
     metadata:
       labels:
-        app: hw
+        app: hw-app-2
     spec:
       containers:
-      - name: hw-container
+      - name: hw-container-app-2
         image: jaimehenao8126/kantox:17c312e08b9ed8a0a0087f136a8ed5b44380efbf
         ports:
         - containerPort: 80
