@@ -9,5 +9,5 @@ EXPOSE 80
 
 # Comando para iniciar Apache cuando se ejecute el contenedor
 # -- habilitar CMD ["false"] para poner artefacto en degraded y comentra el siguiente
-#CMD ["false"] 
-CMD ["httpd", "-D", "FOREGROUND"]
+CMD ["false"] 
+#CMD ["httpd", "-D", "FOREGROUND"]
