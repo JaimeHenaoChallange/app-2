@@ -24,6 +24,6 @@ strategy:
     spec:
       containers:
       - name: hw-container-app-2
-        image: jaimehenao8126/poc-app-2:latest
+        image: jaimehenao8126/poc-app-2:d8db383d47c575036f14206344269bd358165b93
         ports:
         - containerPort: 80
