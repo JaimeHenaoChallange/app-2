@@ -2,9 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hw-deploy-app-2
+  namespace: poc
+  labels:
+    app: hw-app-2
+    kuma.io/service: hw-app-2 # Etiqueta para Kuma
 spec:
   replicas: 1
-  strategy:
+strategy:
     type: RollingUpdate
     rollingUpdate:
       maxSurge: 2
@@ -16,9 +20,10 @@ spec:
     metadata:
       labels:
         app: hw-app-2
+        kuma.io/service: hw-app-2 # Etiqueta para Kuma
     spec:
       containers:
-      - name: hw-container
-        image: jaimehenao8126/poc-app-2:2b0fe07e245dc4964a4260ea6b1f26d7aaf3f7ac
+      - name: hw-container-app-2
+        image: jaimehenao8126/poc-app-2:latest
         ports:
         - containerPort: 80
